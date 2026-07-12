@@ -47,7 +47,7 @@ delete_user() {
 			echo "Error: User does not exist"
 			break
 		else
-			sudo userdell $username
+			sudo userdel $username
 			echo "Success: $username eliminated"
 			break
 		fi
