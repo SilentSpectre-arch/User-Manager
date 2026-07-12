@@ -39,5 +39,18 @@ add_user() {
 	done
 }
 			
+delete_user() {
+	while true;do
+		read -p "Enter Username: " username
 
+		if ! id "$username">/dev/null 2>&1;then
+			echo "Error: User does not exist"
+			break
+		else
+			sudo userdell $username
+			echo "Success: $username eliminated"
+			break
+		fi
+	done
+}
 
