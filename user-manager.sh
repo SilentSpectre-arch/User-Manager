@@ -54,3 +54,16 @@ delete_user() {
 	done
 }
 
+lock_user() {
+	while true;do
+		read -p "Enter Username: " username
+
+		if ! id >dev/null 2>&1;then
+			echo "Error: Username does not exist
+			break
+		else
+			usermod -L $username
+			echo "Success: The user account has been locked"
+			break
+	done
+}
