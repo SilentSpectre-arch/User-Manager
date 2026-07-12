@@ -67,3 +67,18 @@ lock_user() {
 			break
 	done
 }
+
+unlock_user() {
+	while true;do
+		read -p "Enter Username: " username
+
+		if ! id "$username">/dev/null 2>&1;then
+			echo "Error: User does not exist"
+			break
+		else
+			sudo usermod -U "$username"
+			echo "Success: User unlock"
+			break
+		fi
+	done
+}
