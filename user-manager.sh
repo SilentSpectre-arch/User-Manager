@@ -65,6 +65,7 @@ lock_user() {
 			usermod -L $username
 			echo "Success: The user account has been locked"
 			break
+		fi
 	done
 }
 
