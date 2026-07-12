@@ -59,7 +59,7 @@ lock_user() {
 		read -p "Enter Username: " username
 
 		if ! id >dev/null 2>&1;then
-			echo "Error: Username does not exist
+			echo "Error: Username does not exist"
 			break
 		else
 			usermod -L $username
