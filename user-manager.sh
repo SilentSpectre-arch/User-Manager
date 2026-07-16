@@ -83,3 +83,17 @@ unlock_user() {
 		fi
 	done
 }
+
+change_password() {
+	read -p "Enter Username:" username
+
+	if ! id "$username" > /dev/null 2>&1;then
+		echo "Error: User does not exist"
+		exit 1
+	else
+		sudo passwd "$username"
+		echo "Success: Password changed"
+		exit 0
+	fi
+}
+
