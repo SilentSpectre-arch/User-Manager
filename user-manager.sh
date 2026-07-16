@@ -97,3 +97,15 @@ change_password() {
 	fi
 }
 
+user_info() {
+	read -p "Enter Username:" username
+	
+	if ! id > /dev/null 2>&1;then
+		echo "Error: User does not exist"
+		exit 1
+	else
+		sudo id "$username"
+		exit 0
+	fi
+}
+
