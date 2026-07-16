@@ -109,3 +109,12 @@ user_info() {
 	fi
 }
 
+list_users() {
+	if [[ $EUID -ne 0 ]];then
+		echo "Error: Please run this script with sudo"
+		exit 1
+	else
+		getent passwd | less
+	
+	fi
+}
