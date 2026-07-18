@@ -1,27 +1,8 @@
-#/bin/bash
-echo "=============================="
-echo
-echo "	   User Manager Program     "
-echo
-echo "=============================="
-echo
-echo "1)Add User"
-echo
-echo "2)Delete User"
-echo
-echo "3)Lock User"
-echo
-echo "4)Unlock User"
-echo
-echo "5)Change Password"
-echo
-echo "6)User Info"
-echo
-echo "7)Lists User"
-echo
-echo "8)Exit"
+#!/bin/bash
 
-read -p "Select an option: " select
+#==================================
+#			User Manager
+#===================================
 
 add_user() {
 	while true;do
@@ -118,3 +99,81 @@ list_users() {
 	
 	fi
 }
+
+
+while true
+do
+	echo
+	echo "1) Add User"
+	echo
+	echo "2) Delete User"
+	echo
+	echo "3) Lock User"
+	echo
+	echo "4) Unlock User"
+	echo
+	echo "5) Change Password"
+	echo
+	echo "6) User Information"
+	echo
+	echo "7) Users List"
+	echo
+	echo "0)Exit"
+
+	read -p "Enter Your Choice: " choice
+
+	case "$choice" in
+		1)
+			echo
+			echo "Add User: $(add_user)"
+			exit 0
+			;;
+		2)	
+			echo
+			echo "Delete User: $(delete_user)"
+			exit 0
+			;;
+
+		3)
+			echo
+			echo "Lock User: $(lock_user)"
+			exit 0
+			;;
+
+		4)
+			echo
+			echo "Unlock User: $(unlock_user)"
+			exit 0
+			;;
+
+		5)
+			echo
+			echo "Change Pass: $(change_password)"
+			exit 0
+			;;
+
+		6)
+			echo
+			echo "User Info: $(user_info)"
+			exit 0
+			;;
+
+		7)
+			echo
+			echo "List Users: $(list_users)"
+			exit 0
+			;;
+		
+		0)
+			echo
+			echo "Exit"
+			exit 0
+			;;
+
+		*)
+			echo
+			echo "Error: Enter a Valid Option"
+			exit 2
+			;;
+	esac
+done
